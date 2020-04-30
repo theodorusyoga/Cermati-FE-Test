@@ -7,6 +7,10 @@ import { IRootState } from './store';
 import { Actions } from './store/types';
 import * as actions from './actions';
 
+import Notification from './components/Notification';
+
+import './styles/App.scss';
+
 interface IState {
   inputText: string
 }
@@ -44,7 +48,9 @@ class App extends React.Component<ReduxType> {
     const { inputText } = this.state;
     return (
       <div className="App">
+        <Notification />
         <header className="App-header">
+          <p style={{ color: "white" }}>hello</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
@@ -63,7 +69,7 @@ class App extends React.Component<ReduxType> {
             Learn React
         </a>
         </header>
-      </div>
+      </div >
     )
   }
 }

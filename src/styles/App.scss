@@ -1,0 +1,45 @@
+@import '_variables.scss';
+
+.btn{
+    &.btn-primary{
+        background-color: $blue;
+        border-color: $blue;
+        padding-left: $spacing-base;
+        padding-right: $spacing-base;
+        &:not(:disabled):not(.disabled):active, &:focus, &.focus, &:hover{
+            background-color: $dark-blue;
+        }
+    }
+}
+
+// Notification Panel
+
+.notification-panel{
+    background-color: $smoke-grey;
+    transition: 0.3s linear;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    left: 0;
+    &.hidden{
+        height: 0;
+    }
+    .container{
+        max-width: 720px;
+        padding-top: $spacing-base;
+        padding-bottom: $spacing-base;
+        p{
+            margin-bottom: 0;
+            text-align: left;
+        }
+        .notification-panel-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width: 767px){
+                margin-top: $spacing-base;
+                justify-content: flex-start;
+            }
+        }
+    }
+}
