@@ -9,13 +9,13 @@
     position: relative;
     z-index: 0;
     padding: $spacing-base * 2;
-    @media screen and (max-height: 767px) {
-        padding: $spacing-base;
-    }
     .logo {
         text-align: left;
         position: absolute;
         img { width: 75px; }
+        @media screen and (max-height: 767px) {
+            img { width: 60px; }
+        }
     }
     .content{
         &.container{
@@ -47,7 +47,7 @@
                     font-size: 26px;
                 }
                 h3{
-                    font-size: 18px;
+                    font-size: 20px;
                 }
             }
         }

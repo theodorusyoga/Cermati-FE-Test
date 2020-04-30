@@ -21,6 +21,9 @@
         p{
             margin-bottom: 0;
             text-align: left;
+            @media screen and (max-width: 767px){
+                font-size: 14px;
+            }
         }
         .notification-panel-button{
             display: flex;

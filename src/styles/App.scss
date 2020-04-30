@@ -21,17 +21,17 @@ html, body{
         }
     }
     &.btn-info{
-        margin-top: $spacing-base;
-        border: 1px solid $white;
+        margin-top: $spacing-base * 2;
+        border: 2px solid $white;
         background: none;
-        padding: $spacing-base / 1.5;
+        padding: $spacing-base;
         padding-left: $spacing-base * 2;
         padding-right: $spacing-base * 2;
         text-transform: uppercase;
+        font-weight: $bold;
         &:not(:disabled):not(.disabled):active, &:focus, &.focus, :hover{
             background: $white;
             color: $dark-blue;
-            font-weight: $bold;
         }
     }
 }
