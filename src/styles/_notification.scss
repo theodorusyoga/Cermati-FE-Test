@@ -1,0 +1,35 @@
+
+// Notification Panel
+
+.notification-panel{
+    background-color: $smoke-grey;
+    transition: 0.3s linear;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: sticky;
+    max-height: 500px;
+    z-index: 10;
+    &.hidden{
+       max-height: 0px;
+    }
+    .container{
+        max-width: 720px;
+        padding-top: $spacing-base;
+        padding-bottom: $spacing-base;
+        p{
+            margin-bottom: 0;
+            text-align: left;
+        }
+        .notification-panel-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width: 767px){
+                margin-top: $spacing-base;
+                justify-content: flex-start;
+            }
+        }
+    }
+}

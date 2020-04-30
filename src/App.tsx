@@ -8,6 +8,7 @@ import { Actions } from './store/types';
 import * as actions from './actions';
 
 import Notification from './components/Notification';
+import Hero from './components/Hero';
 
 import './styles/App.scss';
 
@@ -49,7 +50,8 @@ class App extends React.Component<ReduxType> {
     return (
       <div className="App">
         <Notification />
-        <header className="App-header">
+        <Hero />
+        {/* <header className="App-header">
           <p style={{ color: "white" }}>hello</p>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -68,7 +70,7 @@ class App extends React.Component<ReduxType> {
           >
             Learn React
         </a>
-        </header>
+        </header> */}
       </div >
     )
   }
