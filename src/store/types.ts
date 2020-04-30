@@ -2,7 +2,8 @@ import { ActionType } from 'typesafe-actions';
 import * as actions from '../actions';
 
 export interface IState {
-    list: string[]
+    list: string[],
+    name: string
 }
 
 export enum Constants {
