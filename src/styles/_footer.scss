@@ -1,0 +1,12 @@
+// Footer
+
+.footer{
+    background: $dark-blue;
+    padding: $spacing-base * 2;
+    .container{
+        p{
+            margin-bottom: 0;
+            color: $white;
+        }
+    }
+}
