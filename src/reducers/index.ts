@@ -1,20 +1,17 @@
 import { IState, Actions, Constants } from '../store/types';
 
 const init: IState = {
-    list: [],
-    name: 'Theodorus Yoga'
+    name: 'Theodorus Yoga',
+    highlights: []
 };
 
 export function reducer(state: IState = init,
     action: Actions): IState {
     switch (action.type) {
-        case Constants.ADD_ITEM:
+        case Constants.ADD_HIGHLIGHTS:
             return {
                 ...state,
-                list: [
-                    ...state.list,
-                    action.payload.item
-                ]
+                highlights: action.payload.item
             }
         default:
             return state;

@@ -1,0 +1,79 @@
+.highlights {
+    background: $smoke-grey;
+    padding-top: $spacing-base * 10; 
+    padding-bottom: $spacing-base * 10; 
+
+    .container{
+        &.title{
+            @media screen and (min-width: 1200px) {
+                max-width: 720px;
+            }
+            p{
+                font-size: 20px;
+                margin-bottom: 0;
+                margin-top: $spacing-base;
+                line-height: 1.5;
+            }
+        }
+        &.content{
+            margin-top: $spacing-base * 2;
+            max-width: none !important;
+            padding-left: $spacing-base * 2;
+            padding-right: $spacing-base * 2;
+            .content-card{
+                padding: $spacing-base/2;
+                .content-box{
+                    padding: $spacing-base;
+                    padding-top: $spacing-base * 2;
+                    padding-bottom: $spacing-base * 2;
+                    text-align: left;
+                    border: 1px solid rgba(0,0,0,0.1);
+                    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+                    position: relative;
+                    h3{
+                        margin-bottom: $spacing-base;
+                    }
+                    P{
+                        line-height: 1.5;
+                    }
+                    > svg {
+                        color: $dark-grey;
+                        font-size: 40px;
+                        position: absolute;
+                        right: $spacing-base;
+                        top: $spacing-base;
+                    }
+                }
+                // Responsive
+                &.col-lg-4{
+                    @media (min-width: 960px){
+                        flex: 0 0 33.333333%;
+                        max-width: 33.333333%;
+                    }
+                    @media (min-width: 1367px){
+                        .content-box{
+                            min-height: 225px;
+                            max-height: 225px;
+                        }
+                    }
+                    @media (min-width: 960px) and (max-width: 1366px){
+                        .content-box{
+                            min-height: 250px;
+                            max-height: 250px;
+                        }
+                    }
+                }
+                &.col-md-6{
+                    @media (min-width: 480px) and (max-width: 959px){
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                        .content-box{
+                            min-height: 250px;
+                            max-height: 250px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
