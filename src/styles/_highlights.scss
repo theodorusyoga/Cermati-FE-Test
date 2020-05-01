@@ -50,7 +50,13 @@
                         flex: 0 0 33.333333%;
                         max-width: 33.333333%;
                     }
-                    @media (min-width: 1367px){
+                    @media (min-width: 1900px){
+                        .content-box{
+                            min-height: 200px;
+                            max-height: 200px;
+                        }
+                    }
+                    @media (min-width: 1367px) and (max-width: 1899px){
                         .content-box{
                             min-height: 225px;
                             max-height: 225px;
@@ -64,9 +70,15 @@
                     }
                 }
                 &.col-md-6{
-                    @media (min-width: 480px) and (max-width: 959px){
+                    @media (min-width: 480px) and (max-width: 767px){
                         flex: 0 0 50%;
                         max-width: 50%;
+                        .content-box{
+                            min-height: 290px;
+                            max-height: 290px;
+                        }
+                    }
+                    @media (min-width: 768px) and (max-width: 959px) {
                         .content-box{
                             min-height: 250px;
                             max-height: 250px;
