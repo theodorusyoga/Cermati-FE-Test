@@ -1,0 +1,57 @@
+.newsletter{
+    background: $blue-bg-transparent;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 640px;
+    max-height: 400px;
+    transition: 0.3s linear;
+    overflow: hidden;
+    &.hidden{
+        max-height: 0;
+    }
+    .content{
+        padding: $spacing-base * 2;
+    }
+    .close{
+        color: $white;
+        opacity: 1;
+        font-size: 14px;
+        cursor: pointer;
+        padding: $spacing-base / 2;
+    }
+    h1, p{
+        text-align: left;
+        color: $white;
+    }
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: $spacing-base;
+    }
+    .form-group {
+        margin-bottom: 0;
+        .col-md-9{
+            padding-right: 0;
+            @media screen and (max-width: 576px) {
+                padding-right: $spacing-base;
+                margin-bottom: $spacing-base;
+            }
+        }
+        .form-control {
+            border-radius: 0;
+            font-size: 14px;
+        }
+        .btn {
+            &.btn-warning{
+                font-size: 14px;
+                font-weight: bold;
+                color: $white;
+                background: $orange;
+                width: 100%;
+            }
+        }
+    }
+}

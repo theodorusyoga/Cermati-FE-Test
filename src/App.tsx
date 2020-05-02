@@ -5,6 +5,7 @@ import Notification from './components/Notification';
 import Hero from './components/Hero';
 import Highlights from './components/Highlights';
 import Footer from './components/Footer';
+import Newsletter from './components/Newsletter';
 
 import './styles/App.scss';
 
@@ -16,6 +17,7 @@ class App extends React.Component {
         <Hero />
         <Highlights />
         <Footer />
+        <Newsletter />
       </div >
     )
   }
