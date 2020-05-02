@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Cookies from 'js-cookie';
-import { Formik } from 'formik';
+import { Formik, FormikErrors } from 'formik';
 
 import { addMinutes } from '../helpers';
 
@@ -54,7 +54,7 @@ class Newsletter extends React.Component {
     }
 
     public validateForm = (values: IForm) => {
-        const errors: IForm = { email: '' };
+        const errors: FormikErrors<IForm> = {};
         if (!values.email) {
             errors.email = 'Required';
         } else if (
@@ -89,7 +89,7 @@ class Newsletter extends React.Component {
                     <p>I write articles related to web technologies, such as design trends, development tools, UI/UX case studies and reviews, and more. Sign up to my newsletter to get them all.</p>
                     <Formik initialValues={formInitialValue}
                         validate={this.validateForm}
-                        onSubmit={() => { }}
+                        onSubmit={this.setNewsletterHidden}
                     >
                         {
                             ({ handleChange, handleBlur, values, errors, touched, handleSubmit }) => (
