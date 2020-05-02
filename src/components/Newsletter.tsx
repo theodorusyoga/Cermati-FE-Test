@@ -2,12 +2,21 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Cookies from 'js-cookie';
+import { Formik } from 'formik';
 
 import { addMinutes } from '../helpers';
 
 interface IState {
     isHidden: Boolean,
     documentHeight: number
+}
+
+interface IForm {
+    email: string
+}
+
+const formInitialValue: IForm = {
+    email: ''
 }
 
 class Newsletter extends React.Component {
@@ -44,6 +53,18 @@ class Newsletter extends React.Component {
         this.setHidden(true);
     }
 
+    public validateForm = (values: IForm) => {
+        const errors: IForm = { email: '' };
+        if (!values.email) {
+            errors.email = 'Required';
+        } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+            errors.email = 'Invalid email address';
+        }
+        return errors;
+    }
+
     componentDidMount() {
         this.setState({
             documentHeight: document.body.clientHeight
@@ -66,20 +87,36 @@ class Newsletter extends React.Component {
                 <div className="content">
                     <h1>Get latest updates in web technologies</h1>
                     <p>I write articles related to web technologies, such as design trends, development tools, UI/UX case studies and reviews, and more. Sign up to my newsletter to get them all.</p>
-                    <form>
-                        <div className="form-group">
-                            <div className="row">
-                                <div className="col-md-9 col-sm-9 col-xs-12">
-                                    <input className="form-control" id="email" placeholder="Email address" />
-                                </div>
-                                <div className="col-md-3 col-sm-3 col-xs-12">
-                                    <button className="btn btn-warning">Count me in!</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <Formik initialValues={formInitialValue}
+                        validate={this.validateForm}
+                        onSubmit={() => { }}
+                    >
+                        {
+                            ({ handleChange, handleBlur, values, errors, touched, handleSubmit }) => (
+                                <form onSubmit={handleSubmit}>
+                                    <div className="form-group">
+                                        <div className="row">
+                                            <div className="col-md-9 col-sm-9 col-xs-12">
+                                                <input className="form-control" id="email"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.email}
+                                                    placeholder="Email address" />
+                                                {
+                                                    touched.email && errors.email ? <span className="error">{errors.email}</span> : ''
+                                                }
+                                            </div>
+                                            <div className="col-md-3 col-sm-3 col-xs-12">
+                                                <button className="btn btn-warning" type="submit">Count me in!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            )
+                        }
+                    </Formik>
                 </div>
-            </div>
+            </div >
         )
     }
 }
