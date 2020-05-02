@@ -19,7 +19,7 @@
         }
         &.content{
             margin-top: $spacing-base * 2;
-            max-width: none !important;
+            max-width: 1366px;
             padding-left: $spacing-base * 2;
             padding-right: $spacing-base * 2;
             .content-card{
@@ -52,13 +52,7 @@
                         flex: 0 0 33.333333%;
                         max-width: 33.333333%;
                     }
-                    @media (min-width: 1900px){
-                        .content-box{
-                            min-height: 200px;
-                            max-height: 200px;
-                        }
-                    }
-                    @media (min-width: 1367px) and (max-width: 1899px){
+                    @media (min-width: 1367px){
                         .content-box{
                             min-height: 225px;
                             max-height: 225px;
