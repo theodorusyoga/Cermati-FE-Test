@@ -13,8 +13,11 @@
         text-align: left;
         position: absolute;
         img { width: 75px; }
-        @media screen and (max-height: 767px) {
+        @media screen and (max-width: 767px) {
             img { width: 60px; }
+        }
+        @media screen and (max-width: 320px) {
+            img { width: 50px; }
         }
     }
     .content{
@@ -48,6 +51,17 @@
                 }
                 h3{
                     font-size: 20px;
+                }
+            }
+            @media screen and (max-width: 320px) {
+                h1{
+                    font-size: 26px;
+                }
+                h2{
+                    font-size: 22px;
+                }
+                h3{
+                    font-size: 18px;
                 }
             }
         }

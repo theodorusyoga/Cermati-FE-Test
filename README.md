@@ -32,7 +32,7 @@ The build is minified and the filenames include the hashes.<br />
 
 ### `yarn start`
 
-Run the app in `production` mode. Open [http://localhost:3000](http://localhost:3000) to view the production mode in the browser. You will not see debugging mode in the browser, unlike `yarn dev`.
+Run the app in `production` mode after `yarn build` is successfully run. Open [http://localhost:3000](http://localhost:3000) to view the production mode in the browser. You will not see debugging mode in the browser, unlike `yarn dev`.
 
 In this case, this app is deployed to [Heroku](https://www.heroku.com/) for fast deployment.
 

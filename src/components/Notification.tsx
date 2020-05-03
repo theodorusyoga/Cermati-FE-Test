@@ -21,10 +21,7 @@ class Notification extends React.Component {
                         <div className="col-md-10 col-sm-12 col-xs-12">
                             <p>
                                 By accessing and using this website, you acknowledge that you have read and
-                                understand our
-                        &nbsp;<a href="/">Cookie Policy</a>,
-                        &nbsp;<a href="/">Privacy Policy</a>,
-                        &nbsp;and our&nbsp;<a href="/">Terms of Service</a>.
+                                understand our&nbsp;<a href="/">Cookie Policy</a>,&nbsp;<a href="/">Privacy Policy</a>,&nbsp;and our&nbsp;<a href="/">Terms of Service</a>.
                         </p>
                         </div>
                         <div className="col-md-2 col-sm-12 col-xs-12 notification-panel-button">
